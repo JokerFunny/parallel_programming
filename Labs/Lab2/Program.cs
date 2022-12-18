@@ -41,7 +41,7 @@ internal class Program
 
         Console.WriteLine(result2);
 
-        WriteResultToFile(result1 + result2);
+        _WriteResultToFile(result1 + result2);
 
         await host.StopAsync();
         Console.WriteLine("Orleans is stopping...");
@@ -67,27 +67,32 @@ internal class Program
         for (int i = 1; i <= numberOfGrains; i++)
             grains.Add(grainFactory.GetGrain<IWorkerGrain>($"grain{i}"));
 
-        IEnumerable<string> chunk;
         ValueTask<(string, IEnumerable<int>)>[] tasksToProceed = new ValueTask<(string, IEnumerable<int>)>[numberOfGrains];
 
         int chunkSize = textToProceed.Count / numberOfGrains;
 
+        var chunksToProceed = Enumerable.Range(0, numberOfGrains).Select(el =>
+            _GetChunkToProceed(el, chunkSize, textToProceed, numberOfGrains)).ToList();
+
         Stopwatch stopwatch = Stopwatch.StartNew();
 
-        for (int i = 0; i < numberOfGrains;)
-        {
-            chunk = textToProceed.Skip(chunkSize * i);
-
-            tasksToProceed[i] = grains[i].DoStuff(i++ != numberOfGrains ? chunk.Take(chunkSize).ToList() : chunk.ToList());
-        }
+        for (int i = 0; i < chunksToProceed.Count; i++)
+            tasksToProceed[i] = grains[i].DoStuff(chunksToProceed[i]);
 
         var result = await tasksToProceed.WhenAll();
 
         stopwatch.Stop();
 
-        return $"Number of grains - {numberOfGrains}, elapsed time - {stopwatch.ElapsedMilliseconds} ms.";
+        return $"Number of grains - {numberOfGrains}, elapsed time - {stopwatch.ElapsedMilliseconds} ms.{Environment.NewLine}";
     }
 
-    public static void WriteResultToFile(string result)
-        => File.AppendAllLines("..\\..\\..\\output.txt", new[] { result, Environment.NewLine  });
+    static List<string> _GetChunkToProceed(int elementIndex, int chunkSize, List<string> textToProceed, int numberOfGrains)
+    {
+        IEnumerable<string> chunk = textToProceed.Skip(chunkSize * elementIndex);
+
+        return elementIndex++ != numberOfGrains ? chunk.Take(chunkSize).ToList() : chunk.ToList();
+    }
+
+    static void _WriteResultToFile(string result)
+        => File.AppendAllLines("..\\..\\..\\output.txt", new[] { result });
 }
