@@ -1,0 +1,7 @@
+Sync version elapsed - 70958 ms.
+Number of grains - 10, elapsed time - 7133 ms.
+
+
+Number of grains - 100, elapsed time - 3193 ms.
+
+

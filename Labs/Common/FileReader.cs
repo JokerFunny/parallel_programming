@@ -1,4 +1,4 @@
-﻿namespace Lab1
+﻿namespace Common
 {
     public static class FileReader
     {
