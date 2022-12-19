@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 internal class Program
 {
-    static bool _runSyncMethod = false;
+    static bool _runSyncMethod = true;
 
     private static async Task Main(string[] args)
     {

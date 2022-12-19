@@ -12,8 +12,8 @@ namespace Lab2
 
             for (int i = 0; i < stringsToProceed.Count; i++)
             {
-                if (i % 10 == 0)
-                    Task.Delay(1).Wait();
+                if (i % 50 == 0)
+                    Task.Delay(10).Wait();
 
                 result.AddRange(Worker.DoStuff(stringsToProceed[i]));
             }

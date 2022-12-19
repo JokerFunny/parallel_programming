@@ -31,3 +31,12 @@ Number of grains - 100, elapsed time - 3191 ms.
 
 Number of grains - 100, elapsed time - 4667 ms.
 
+Sync version elapsed - 7278 ms.
+Number of grains - 100, elapsed time - 865 ms.
+
+Sync version elapsed - 14522 ms.
+Number of grains - 100, elapsed time - 2224 ms.
+
+Sync version elapsed - 14506 ms.
+Number of grains - 500, elapsed time - 17460 ms.
+
