@@ -1,42 +1,27 @@
-Sync version elapsed - 70958 ms.
-Number of grains - 10, elapsed time - 7133 ms.
-
-Number of grains - 100, elapsed time - 3193 ms.
-
-Number of grains - 200, elapsed time - 6649 ms.
-
-Number of grains - 100, elapsed time - 2197 ms.
-
-Number of grains - 100, elapsed time - 2010 ms.
-
-Number of grains - 100, elapsed time - 1936 ms.
-
-Number of grains - 100, elapsed time - 989 ms.
-
-Number of grains - 100, elapsed time - 2446 ms.
-
-Number of grains - 100, elapsed time - 2100 ms.
-
-Number of grains - 100, elapsed time - 1721 ms.
-
-Number of grains - 100, elapsed time - 2294 ms.
-
-Number of grains - 100, elapsed time - 2161 ms.
-
-Number of grains - 3, elapsed time - 23545 ms.
-
-Number of grains - 100, elapsed time - 4435 ms.
-
-Number of grains - 100, elapsed time - 3191 ms.
-
-Number of grains - 100, elapsed time - 4667 ms.
-
-Sync version elapsed - 7278 ms.
-Number of grains - 100, elapsed time - 865 ms.
-
 Sync version elapsed - 14522 ms.
 Number of grains - 100, elapsed time - 2224 ms.
 
 Sync version elapsed - 14506 ms.
 Number of grains - 500, elapsed time - 17460 ms.
+
+Sync version elapsed - 14530 ms.
+Number of grains - 10, elapsed time - 1525 ms.
+
+Sync version elapsed - 14514 ms.
+Number of grains - 50, elapsed time - 975 ms.
+
+Sync version elapsed - 14514 ms.
+Number of grains - 5, elapsed time - 2962 ms.
+
+Sync version elapsed - 14552 ms.
+Number of grains - 20, elapsed time - 817 ms.
+
+Sync version elapsed - 14516 ms.
+Number of grains - 30, elapsed time - 615 ms.
+
+Sync version elapsed - 14495 ms.
+Number of grains - 30, elapsed time - 621 ms.
+
+Sync version elapsed - 14501 ms.
+Number of grains - 40, elapsed time - 803 ms.
 
