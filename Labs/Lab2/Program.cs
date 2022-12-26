@@ -62,6 +62,8 @@ internal class Program
 
     public static async Task<string> RunGrainsVersion(IGrainFactory grainFactory, List<string> textToProceed, int numberOfGrains)
     {
+        Stopwatch stopwatch = Stopwatch.StartNew();
+
         List<IWorkerGrain> grains = new();
 
         for (int i = 1; i <= numberOfGrains; i++)
@@ -73,8 +75,6 @@ internal class Program
 
         var chunksToProceed = Enumerable.Range(0, numberOfGrains).Select(el =>
             _GetChunkToProceed(el, chunkSize, textToProceed, numberOfGrains)).ToList();
-
-        Stopwatch stopwatch = Stopwatch.StartNew();
 
         for (int i = 0; i < chunksToProceed.Count; i++)
             tasksToProceed[i] = grains[i].DoStuff(chunksToProceed[i]);
