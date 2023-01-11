@@ -1,0 +1,7 @@
+docker build -f .\Lab5.Dockerfile -t lab5 .
+docker tag lab5 mendasium/tpp-lab5
+docker push mendasium/tpp-lab5
+
+docker build -f .\Lab5Service.Dockerfile -t lab5service .
+docker tag lab5service mendasium/tpp-lab5-service
+docker push mendasium/tpp-lab5-service
